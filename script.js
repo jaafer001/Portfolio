@@ -218,32 +218,7 @@ function renderCertificates() {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Contact form submission
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
         
-        const name = document.getElementById('contactName').value;
-        const email = document.getElementById('contactEmail').value;
-        const message = document.getElementById('contactMessage').value;
-        
-        // Simple validation
-        if (!name || !email || !message) {
-            showAlert('Please fill in all fields', 'error');
-            return;
-        }
-
-        // Here you would typically send the form data to a server
-        try {
-            // Simulate API call
-            await simulateApiCall({ name, email, message });
-            showAlert('Thank you for your message! I will get back to you soon.', 'success');
-            contactForm.reset();
-        } catch (error) {
-            showAlert('There was an error sending your message. Please try again later.', 'error');
-            console.error('Form submission error:', error);
-        }
-    });
-    
     // Hamburger menu toggle
     hamburger.addEventListener('click', toggleMobileMenu);
     
