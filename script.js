@@ -94,6 +94,13 @@ const portfolioData = {
             date: "May 2025",
             description: "HackerRank skill certification test, Achieved five-star rating in Python programming challenges",
             url: "certificates/pythonHackerrank.html"
+        },
+        {
+            name: "Specialized Technician in Mobile Application Development",
+            issuer: "ISTA NTIC SYBA",
+            date: " Sep 2023 - Jul 2025",
+            description: "Specialized Technician Certification in Mobile Application Development, Completed 2-year vocational program covering Android, iOS, and cross-platform development",
+            url: "#"
         }
     ]
 };
