@@ -23,7 +23,7 @@ const portfolioData = {
             title: "Backend Development",
             items: [
                 "PHP",
-                "Python (Django) - Currently learning",
+                "Spring-boot Kotlin",
                 "RESTful API Design",
                 "JSON & XML Processing"
             ]
@@ -33,7 +33,6 @@ const portfolioData = {
             items: [
                 "SQL (MySQL, PostgreSQL)",
                 "SQLite - Mobile development",
-                "Firebase Realtime Database",
                 "Firestore - NoSQL experience"
             ]
         },
@@ -60,9 +59,16 @@ const portfolioData = {
         {
             name: "Quote App",
             date: "May 2025 - Present",
-            description: "A motivational quote application with daily notifications, favorites system, and social sharing capabilities. Built with Kotlin and Firebase.",
+            description: "A motivational quote application , favorites system Built with Kotlin .",
             url: "https://github.com/jaafer001/QuoteApp",
             technologies: ["Kotlin", "Firebase", "MVVM Architecture"]
+        },
+        {
+            name: "Gym subscription management",
+            date: "Nov 2025 - Present",
+            description: "A cross-platform Flutter app that simplifies gym operations. It allows owners and trainers to manage members, track subscriptions, schedule training sessions, and send renewal alerts",
+            url: "https://github.com/jaafer001/Gym-managemment-app",
+            technologies: ["dart", "flutter", "SQLite", "Firebase", "Provider"]
         }
     ],
     education: [
@@ -73,21 +79,7 @@ const portfolioData = {
             description: "Comprehensive training in mobile application development covering Android, iOS, and cross-platform technologies."
         }
     ],
-    organizations: [
-        {
-            name: "SECURITY EAGLE",
-            period: "July 2025 - Present",
-            role: "Mobile Security Specialist",
-            description: "Focusing on secure mobile application development practices and penetration testing."
-        },
-        {
-            name: "Atlas Defenders",
-            period: "May 2025 - Present",
-            role: "Volunteer Developer",
-            description: "Contributing to open source projects focused on digital privacy and security."
-        }
-    ],
-    certificates: [
+        certificates: [
         {
             name: "HackerRank Python (Basic)",
             issuer: "HackerRank",
@@ -176,18 +168,6 @@ function renderEducation() {
             <p class="institution"><strong>${edu.institution}</strong></p>
             <p class="period">${edu.period}</p>
             ${edu.description ? `<p class="description">${edu.description}</p>` : ''}
-        </div>
-    `).join('');
-}
-
-// Render organizations
-function renderOrganizations() {
-    organizationsContainer.innerHTML = portfolioData.organizations.map(org => `
-        <div class="org-item" data-aos="fade-up">
-            <h3>${org.name}</h3>
-            <p class="period">${org.period}</p>
-            ${org.role ? `<p class="role"><strong>${org.role}</strong></p>` : ''}
-            ${org.description ? `<p class="description">${org.description}</p>` : ''}
         </div>
     `).join('');
 }
