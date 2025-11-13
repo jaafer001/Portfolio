@@ -79,7 +79,7 @@ const portfolioData = {
             description: "Comprehensive training in mobile application development covering Android, iOS, and cross-platform technologies."
         }
     ],
-        certificates: [
+    certificates: [
         {
             name: "HackerRank Python (Basic)",
             issuer: "HackerRank",
@@ -116,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSkills();
     renderProjects();
     renderEducation();
-    renderOrganizations();
     renderCertificates();
     setupEventListeners();
     initCursorShine();
@@ -174,7 +173,7 @@ function renderEducation() {
 
 // Render certificates
 function renderCertificates() {
-    certificatesContainer.innerHTML = portfolioData.certificates.map(cert => `
+        certificatesContainer.innerHTML = portfolioData.certificates.map(cert => `
         <div class="certificate-card" data-aos="fade-up">
             <div class="certificate-content">
                 <h3>${cert.name}</h3>
@@ -182,11 +181,7 @@ function renderCertificates() {
                 <p class="description">${cert.description}</p>
                 <div class="certificate-meta">
                     <span class="date">${cert.date}</span>
-                    ${cert.url ? `
-                    <a href="${cert.url}" class="btn btn-small"  rel="noopener noreferrer">
-                        View Credential
-                    </a>
-                    ` : ''}
+                    ${cert.url ? `<a href="${cert.url}" class="btn btn-small" rel="noopener noreferrer">View Credential</a>` : ''}
                 </div>
                 <div class="certificate-badge">
                     <i class="fas fa-award"></i>
@@ -195,6 +190,7 @@ function renderCertificates() {
         </div>
     `).join('');
 }
+
 
 // Setup event listeners
 function setupEventListeners() {
