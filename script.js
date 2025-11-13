@@ -77,6 +77,12 @@ const portfolioData = {
             institution: "ISTA NTIC, Marrakech",
             period: "September 2023 - July 2025",
             description: "Comprehensive training in mobile application development covering Android, iOS, and cross-platform technologies."
+        },
+        {
+            degree: " Bachelor of Physical Science",
+            institution: "Lycée sidi youssef ben ali, Marrakech",
+            period: "September 2020 - June 2021",
+            description: "Focused on scientific subjects including Mathematics, Physics, and Chemistry."
         }
     ],
     certificates: [
