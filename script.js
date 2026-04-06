@@ -1,13 +1,12 @@
-// Portfolio Data
 const portfolioData = {
     skills: [
         {
             title: "Mobile Development",
             items: [
-                "Android (Kotlin)",
-                "iOS (Swift) - Currently learning",
+                "Android (XML, Jetpack Compose)",
                 "Cross-platform (Flutter)",
-                "React Native - Basic knowledge"
+                "MVVM Architecture",
+                "Material Design Principles"
             ]
         },
         {
@@ -15,14 +14,12 @@ const portfolioData = {
             items: [
                 "HTML5 & CSS3",
                 "JavaScript (ES6+)",
-                "React.js - Learning",
                 "Responsive Web Design"
             ]
         },
         {
             title: "Backend Development",
             items: [
-                "PHP",
                 "Spring-boot Kotlin",
                 "RESTful API Design",
                 "JSON & XML Processing"
@@ -31,7 +28,6 @@ const portfolioData = {
         {
             title: "Databases",
             items: [
-                "SQL (MySQL, PostgreSQL)",
                 "SQLite - Mobile development",
                 "Firestore - NoSQL experience"
             ]
@@ -58,18 +54,32 @@ const portfolioData = {
     projects: [
         {
             name: "Quote App",
-            date: "May 2025 - Present",
+            date: "May 2025 - Jul 2025",
             description: "A motivational quote application , favorites system Built with Kotlin .",
             url: "https://github.com/jaafer001/QuoteApp",
             technologies: ["Kotlin", "Firebase", "MVVM Architecture"]
         },
         {
             name: "Gym subscription management",
-            date: "Nov 2025 - Present",
+            date: "Nov 2025 - Jan 2026",
             description: "A cross-platform Flutter app that simplifies gym operations. It allows owners and trainers to manage members, track subscriptions, schedule training sessions, and send renewal alerts",
             url: "https://github.com/jaafer001/Gym-managemment-app",
             technologies: ["dart", "flutter", "SQLite", "Firebase", "Provider"]
-        }
+        },
+        {
+            name: "Chatty",
+            date: "Mar 2026 - Present",
+            description: "Chatty is a real-time messaging app that lets users connect instantly with live updates and a smooth, user-friendly interface",
+            url: "https://github.com/jaafer001/Chatty",
+            technologies: ["Kotlin", "Jetpack Compose", "Firebase", "Room Database", "Kotlin Coroutines"]
+        },
+        {
+            name: "Box-in-Box",
+            date: "Mar 2026 - Apr 2026",
+            description: "Ultimate Tic-Tac-Toe adds deep strategy to the classic game. Play on a 9×9 board made of 9 mini grids — winning a mini board claims it on the big board. Your move inside a mini board determines your opponent's next location, making every move count twice. Play vs a friend or the AI.",
+            url: "https://github.com/jaafer001/box-in-box",
+            technologies: ["Kotlin", "Jetpack Compose", "Coroutines"]
+        },
     ],
     education: [
         {
@@ -103,7 +113,6 @@ const portfolioData = {
     ]
 };
 
-// DOM Elements
 const skillsContainer = document.querySelector('.skills-container');
 const projectsContainer = document.querySelector('.projects-container');
 const educationContainer = document.querySelector('.education-container');
@@ -117,7 +126,6 @@ const cursorShine = document.querySelector('.cursor-shine');
 const animatedBackground = document.querySelector('.animated-background');
 const particlesContainer = document.querySelector('.particles-container');
 
-// Initialize the portfolio
 document.addEventListener('DOMContentLoaded', () => {
     renderSkills();
     renderProjects();
@@ -130,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
 });
 
-// Render skills
+
 function renderSkills() {
     skillsContainer.innerHTML = portfolioData.skills.map(skill => `
         <div class="skill-card">
@@ -142,7 +150,6 @@ function renderSkills() {
     `).join('');
 }
 
-// Render projects
 function renderProjects() {
     projectsContainer.innerHTML = portfolioData.projects.map((project, index) => `
         <div class="project-card" data-aos="fade-up" data-aos-delay="${index * 100}">
@@ -152,7 +159,7 @@ function renderProjects() {
                 <p class="project-description">${project.description}</p>
                 ${project.technologies ? `
                 <div class="project-technologies">
-                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    ${project.technologies.map(tech => `<span class="tech-tag">${tech} </span>`).join('')}
                 </div>
                 ` : ''}
                 ${project.url ? `
@@ -165,7 +172,6 @@ function renderProjects() {
     `).join('');
 }
 
-// Render education
 function renderEducation() {
     educationContainer.innerHTML = portfolioData.education.map(edu => `
         <div class="education-item" data-aos="fade-up">
@@ -177,7 +183,6 @@ function renderEducation() {
     `).join('');
 }
 
-// Render certificates
 function renderCertificates() {
         certificatesContainer.innerHTML = portfolioData.certificates.map(cert => `
         <div class="certificate-card" data-aos="fade-up">
@@ -198,41 +203,33 @@ function renderCertificates() {
 }
 
 
-// Setup event listeners
 function setupEventListeners() {
         
-    // Hamburger menu toggle
     hamburger.addEventListener('click', toggleMobileMenu);
     
-    // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
     
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', smoothScroll);
     });
 
-    // Theme toggle
     themeToggle.addEventListener('click', toggleTheme);
 }
 
-// Toggle mobile menu
 function toggleMobileMenu() {
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
 }
 
-// Close mobile menu
 function closeMobileMenu() {
     hamburger.classList.remove('active');
     navLinks.classList.remove('active');
     document.body.classList.remove('no-scroll');
 }
 
-// Smooth scroll to section
 function smoothScroll(e) {
     e.preventDefault();
     
@@ -248,7 +245,6 @@ function smoothScroll(e) {
     }
 }
 
-// Show alert message
 function showAlert(message, type) {
     const alert = document.createElement('div');
     alert.className = `alert alert-${type}`;
@@ -267,7 +263,6 @@ function showAlert(message, type) {
     }, 3000);
 }
 
-// Simulate API call
 function simulateApiCall(data) {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -277,17 +272,14 @@ function simulateApiCall(data) {
     });
 }
 
-// Initialize cursor shine effect
 function initCursorShine() {
     if (!cursorShine) return;
 
-    // Make cursor follow mouse
     document.addEventListener('mousemove', (e) => {
         cursorShine.style.left = `${e.clientX}px`;
         cursorShine.style.top = `${e.clientY}px`;
     });
     
-    // Grow cursor when clicking
     document.addEventListener('mousedown', () => {
         cursorShine.classList.add('active');
     });
@@ -296,7 +288,6 @@ function initCursorShine() {
         cursorShine.classList.remove('active');
     });
     
-    // Interactive elements effect
     const interactiveElements = document.querySelectorAll(
         'a, button, .btn, input, textarea, .project-card, .skill-card'
     );
@@ -318,7 +309,6 @@ function initCursorShine() {
     });
 }
 
-// Initialize particles effect
 function initParticles() {
     if (!particlesContainer) return;
 
@@ -328,7 +318,6 @@ function initParticles() {
         const particle = document.createElement('div');
         particle.className = 'particle';
         
-        // Random properties
         const size = Math.random() * 5 + 2;
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
@@ -348,17 +337,13 @@ function initParticles() {
     }
 }
 
-// Initialize theme system
 function initTheme() {
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem('portfolio-theme') || 'default';
     document.body.setAttribute('data-theme', savedTheme);
     
-    // Update toggle icon
     updateThemeIcon(savedTheme);
 }
 
-// Toggle between light/dark theme
 function toggleTheme() {
     const currentTheme = document.body.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'default' : 'dark';
@@ -368,7 +353,6 @@ function toggleTheme() {
     updateThemeIcon(newTheme);
 }
 
-// Update theme toggle icon
 function updateThemeIcon(theme) {
     const icon = themeToggle.querySelector('i');
     if (theme === 'dark') {
@@ -380,7 +364,6 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Initialize animations on scroll
 function initAnimations() {
     const animateOnScroll = () => {
         const elements = document.querySelectorAll(
@@ -398,7 +381,6 @@ function initAnimations() {
         });
     };
 
-    // Set initial state for animated elements
     document.querySelectorAll(
         '.skill-card, .project-card, .education-item, .org-item, .certificate-card'
     ).forEach(element => {
@@ -407,14 +389,11 @@ function initAnimations() {
         element.style.transition = 'all 0.6s ease';
     });
 
-    // Add scroll event listener
     window.addEventListener('scroll', animateOnScroll);
     
-    // Trigger once on load
     animateOnScroll();
 }
 
-// Initialize hero animations
 function initHeroAnimations() {
     const heroTitle = document.querySelector('.hero-title');
     const heroSubtitle = document.querySelector('.hero h2');
@@ -450,5 +429,4 @@ function initHeroAnimations() {
     }
 }
 
-// Initialize everything when DOM is loaded
 initHeroAnimations();
